@@ -10,36 +10,6 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
-    macros {
-        right_wing: right_bracket {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RA(N0)>;
-            label = "RIGHT_BRACKET";
-        };
-
-        left_wing: left_bracket {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RA(N7)>;
-            label = "LEFT_BRACKET";
-        };
-
-        left_para: left_para {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LS(N8)>;
-            label = "LEFT_PARA";
-        };
-
-        right_para: right_para {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LS(N9)>;
-            label = "RIGHT_PARA";
-        };
-    };
-
     behaviors {
         hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
@@ -59,6 +29,22 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
+        };
+
+        tap_7: tap_7 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_7";
+            #binding-cells = <0>;
+            bindings = <&kp N7>, <&kp RA(N7)>;
+
+            tapping-term-ms = <180>;
+        };
+
+        tap_0: tap_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_0";
+            #binding-cells = <0>;
+            bindings = <&kp N0>, <&kp RA(N0)>;
         };
     };
 
@@ -88,10 +74,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESC    &kp N1        &kp N2        &kp N3        &trans  &kp PRINTSCREEN         &trans    &trans        &trans     &trans  &trans  &trans
-&kp LSHFT  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans  &kp NON_US_BACKSLASH    &trans    &kp UP_ARROW  &trans     &trans  &trans  &kp BACKSLASH
-&kp LCTRL  &kp N7        &kp NUMBER_8  &kp N9        &kp N0  &kp MINUS               &kp LEFT  &kp DOWN      &kp RIGHT  &trans  &trans  &kp DELETE
-                                       &kp LEFT_ALT  &trans  &kp RIGHT_ALT           &kp RET   &trans        &kp RALT
+&kp ESC    &kp N1        &kp N2        &kp N3        &kp GRAVE  &kp PRINTSCREEN         &trans    &trans        &trans     &trans  &trans  &trans
+&kp LSHFT  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans     &kp NON_US_BACKSLASH    &trans    &kp UP_ARROW  &trans     &trans  &trans  &kp BACKSLASH
+&kp LCTRL  &kp N7        &kp NUMBER_8  &kp N9        &kp N0     &kp MINUS               &kp LEFT  &kp DOWN      &kp RIGHT  &trans  &trans  &kp DELETE
+                                       &kp LEFT_ALT  &trans     &kp RIGHT_ALT           &kp RET   &trans        &kp RALT
             >;
         };
 
@@ -112,10 +98,10 @@
 
         combo_layer {
             bindings = <
-&hml H RA(N7)  &hml I RA(N0)  &left_para  &right_para  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans         &trans         &trans      &trans       &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans         &trans         &trans      &trans       &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                                          &trans       &trans  &trans    &trans  &trans  &trans
+&tap_7  &kp N8  &kp N9  &tap_0  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
