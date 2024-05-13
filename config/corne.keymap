@@ -112,10 +112,10 @@
 
         combo_layer {
             bindings = <
-&hml H RA(N7)  &hml I RA(N0)  &left_para  &right_para  &left_bracket  &right_bracket    &trans  &trans  &trans  &trans  &trans  &trans
-&trans         &trans         &trans      &trans       &trans         &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans         &trans         &trans      &trans       &trans         &trans            &trans  &trans  &trans  &trans  &trans  &trans
-                                          &trans       &trans         &trans            &trans  &trans  &trans
+&hml H RA(N7)  &hml I RA(N0)  &left_para  &right_para  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans         &trans         &trans      &trans       &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans         &trans         &trans      &trans       &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                                          &trans       &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
