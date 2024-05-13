@@ -10,6 +10,72 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
+    macros {
+        right_wing: right_bracket {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RA(N0)>;
+            label = "RIGHT_BRACKET";
+        };
+
+        left_wing: left_bracket {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RA(N7)>;
+            label = "LEFT_BRACKET";
+        };
+
+        left_para: left_para {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N8)>;
+            label = "LEFT_PARA";
+        };
+
+        right_para: right_para {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N9)>;
+            label = "RIGHT_PARA";
+        };
+
+        left_bracket: left_bracket {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RA(N8)>;
+            label = "LEFT_BRACKET";
+        };
+
+        right_bracket: right_bracket {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RA(N9)>;
+            label = "RIGHT_BRACKET";
+        };
+    };
+
+    behaviors {
+        hml: homerow_mods_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_LEFT_HAND";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            hold-trigger-key-positions = <6 7 8 9 10 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
+        };
+
+        hmr: homewrow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_RIGHT_HAND";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -21,7 +87,7 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESC           &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P      &kp LEFT_BRACKET
+&hml TAB ESCAPE   &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P      &kp LEFT_BRACKET
 &kp LSHIFT        &kp A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI   &kp SQT
 &kp LEFT_CONTROL  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp SLASH  &kp BACKSPACE
                                 &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
@@ -36,7 +102,7 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp N1        &kp N2        &kp N3        &trans  &kp PRINTSCREEN         &trans    &trans        &trans     &trans  &trans  &trans
+&kp ESC    &kp N1        &kp N2        &kp N3        &trans  &kp PRINTSCREEN         &trans    &trans        &trans     &trans  &trans  &trans
 &kp LSHFT  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans  &kp NON_US_BACKSLASH    &trans    &kp UP_ARROW  &trans     &trans  &trans  &kp BACKSLASH
 &kp LCTRL  &kp N7        &kp NUMBER_8  &kp N9        &kp N0  &kp MINUS               &kp LEFT  &kp DOWN      &kp RIGHT  &trans  &trans  &kp DELETE
                                        &kp LEFT_ALT  &trans  &kp RIGHT_ALT           &kp RET   &trans        &kp RALT
@@ -56,6 +122,24 @@
 &kp LCTRL       &kp F7  &kp F7  &kp F8    &kp F9  &trans       &trans      &trans      &trans      &trans  &trans  &trans
                                 &kp LGUI  &trans  &kp SPACE    &kp RET     &trans      &kp RALT
             >;
+        };
+
+        combo_layer {
+            bindings = <
+&hml H RA(N7)  &hml I RA(N0)  &left_para  &right_para  &left_bracket  &right_bracket    &trans  &trans  &trans  &trans  &trans  &trans
+&trans         &trans         &trans      &trans       &trans         &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans         &trans         &trans      &trans       &trans         &trans            &trans  &trans  &trans  &trans  &trans  &trans
+                                          &trans       &trans         &trans            &trans  &trans  &trans
+            >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        combo_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 };
