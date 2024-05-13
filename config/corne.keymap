@@ -38,20 +38,6 @@
             bindings = <&kp LS(N9)>;
             label = "RIGHT_PARA";
         };
-
-        left_bracket: left_bracket {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RA(N8)>;
-            label = "LEFT_BRACKET";
-        };
-
-        right_bracket: right_bracket {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RA(N9)>;
-            label = "RIGHT_BRACKET";
-        };
     };
 
     behaviors {
