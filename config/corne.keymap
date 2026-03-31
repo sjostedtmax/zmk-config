@@ -74,7 +74,7 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESC    &kp N1        &kp N2        &kp N3        &kp EQUAL  &kp PRINTSCREEN         &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &trans  &trans  &trans
+&kp ESC    &kp N1        &kp N2        &kp N3        &kp EQUAL  &kp PRINTSCREEN         &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &trans  &trans  &kp LEFT_WIN
 &kp LSHFT  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans     &kp NON_US_BACKSLASH    &kp HOME        &kp UP_ARROW      &kp END     &trans  &trans  &kp BACKSLASH
 &kp LCTRL  &kp N7        &kp NUMBER_8  &kp N9        &kp N0     &kp MINUS               &kp LEFT        &kp DOWN          &kp RIGHT   &trans  &trans  &kp DELETE
                                        &kp LEFT_ALT  &trans     &kp RIGHT_ALT           &kp RET         &trans            &kp RALT
