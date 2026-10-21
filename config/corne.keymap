@@ -89,19 +89,19 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB         &kp F1  &kp F2  &kp F3    &trans  &kp TILDE    &bt BT_PRV  &bt BT_NXT  &bt BT_CLR  &trans  &trans  &out OUT_TOG
-&kp LEFT_SHIFT  &kp F4  &kp F5  &kp F6    &trans  &trans       &trans      &trans      &trans      &trans  &trans  &trans
-&kp LCTRL       &kp F7  &kp F7  &kp F8    &kp F9  &trans       &trans      &trans      &trans      &trans  &trans  &trans
-                                &kp LGUI  &trans  &kp SPACE    &kp RET     &trans      &kp RALT
+&kp TAB         &kp F1  &kp F2  &kp F3    &trans   &kp TILDE    &bt BT_PRV  &bt BT_NXT  &bt BT_CLR  &trans  &trans  &out OUT_TOG
+&kp LEFT_SHIFT  &kp F4  &kp F5  &kp F6    &trans   &trans       &trans      &trans      &trans      &trans  &trans  &trans
+&kp LCTRL       &kp F7  &kp F8  &kp F9    &kp F10  &trans       &trans      &trans      &trans      &trans  &trans  &trans
+                                &kp LGUI  &trans   &kp SPACE    &kp RET     &trans      &kp RALT
             >;
         };
 
-        combo_layer {
+        layer_4 {
             bindings = <
-&tap_7  &kp N8  &kp N9  &tap_0  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&hml ESC TAB      &kp LC(LA(LS(Q)))  &kp W              &kp E              &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P      &kp LEFT_BRACKET
+&kp LSHIFT        &kp A              &kp LC(LA(LS(S)))  &kp LC(LA(LS(D)))  &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI   &kp SQT
+&kp LEFT_CONTROL  &kp LC(LA(LS(Z)))  &kp LC(LA(LS(X)))  &kp LC(LA(LS(C)))  &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp SLASH  &kp BACKSPACE
+                                                        &kp LEFT_ALT       &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
             >;
         };
     };
